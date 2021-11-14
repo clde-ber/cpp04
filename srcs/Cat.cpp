@@ -1,0 +1,36 @@
+#include "Animal.hpp"
+#include "Cat.hpp"
+
+Cat::Cat( void )
+{
+    std::cout << "Cat default constructor called" << std::endl;
+}
+
+Cat::Cat( std::string type )
+{
+    (void)type;
+    std::cout << "Cat constructor called" << std::endl;
+}
+
+Cat::Cat( Cat const & rhs)
+{
+    (void)rhs;
+    std::cout << "Cat copy constructor called" << std::endl;
+}
+
+const Cat & Cat::operator=( Cat const &rhs) const
+{
+    std::cout << "assignation operator called - Cat" << std::endl;
+    return rhs;
+}
+
+Cat::~Cat( void )
+{
+    std::cout << "Cat destructor called" << std::endl;
+}
+
+
+void Cat::makeSound( void ) const
+{
+    std::cout << "MEEEEEEEW!" << std::endl;
+}
