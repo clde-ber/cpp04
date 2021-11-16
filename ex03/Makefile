@@ -1,14 +1,13 @@
 .SUFFIXES:
 
-NAME	=	Zombie
+NAME	=	Material
 LIST	=	main \
-			Animal \
-			Cat \
-			Dog \
-			WrongAnimal \
+			Materia \
+			Character \
+			Materiasource \
 			
 HEADER	=	-I includes/
-CFLAGS	=	-Wall -Wextra -Werror -MMD -std=c++98
+CFLAGS	=	-Wall -Wextra -Werror -MMD -std=c++98 -g3 -fsanitize=address
 CC		=	clang++
 
 S_DIR	=	srcs/

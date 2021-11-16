@@ -10,14 +10,14 @@ Dog::Dog( void )
 Dog::Dog( std::string type )
 {
     this->_brain = new Brain();
-    (void)type;
+    _type = type;
     std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog( Aanimal const & rhs)
 {
     this->_brain = new Brain();
-    (void)rhs;
+    _type = rhs.getType();
     std::cout << "Dog copy constructor called" << std::endl;
 }
 

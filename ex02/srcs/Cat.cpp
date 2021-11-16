@@ -10,14 +10,14 @@ Cat::Cat( void )
 Cat::Cat( std::string type )
 {
     this->_brain = new Brain();
-    (void)type;
+    _type = type;
     std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat::Cat( Aanimal const & rhs)
 {
     this->_brain = new Brain();
-    (void)rhs;
+    _type = rhs.getType();
     std::cout << "Cat copy constructor called" << std::endl;
 }
 
