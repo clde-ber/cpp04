@@ -12,7 +12,7 @@ public:
     Brain( void );
     Brain( std::string idea );
     Brain( Brain const & rhs);
-    const Brain & operator=( Brain const &rhs) const;
+    const Brain & operator=( Brain const &rhs);
     ~Brain( void );
 };
 

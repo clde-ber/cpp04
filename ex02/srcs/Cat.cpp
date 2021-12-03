@@ -3,25 +3,25 @@
 
 Cat::Cat( void )
 {
-    this->_brain = new Brain("Cat idea");
+    _brain = new Brain("Cat idea");
     std::cout << "Cat default constructor called" << std::endl;
 }
 
 Cat::Cat( std::string type )
 {
-    this->_brain = new Brain();
+    _brain = new Brain();
     _type = type;
     std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat::Cat( Aanimal const & rhs)
 {
-    this->_brain = new Brain();
+    _brain = new Brain();
     _type = rhs.getType();
     std::cout << "Cat copy constructor called" << std::endl;
 }
 
-const Cat & Cat::operator=( Cat const &rhs) const
+const Cat & Cat::operator=( Cat const &rhs)
 {
     std::cout << "assignation operator called - Cat" << std::endl;
     _type = rhs._type;

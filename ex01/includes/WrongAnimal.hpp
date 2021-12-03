@@ -12,7 +12,7 @@ class WrongAnimal
         WrongAnimal( void );
         WrongAnimal( std::string type );
         WrongAnimal( WrongAnimal const & rhs);
-        const WrongAnimal & operator=( WrongAnimal const &rhs) const;
+        const WrongAnimal & operator=( WrongAnimal const &rhs);
         virtual ~WrongAnimal( void );
         void makeSound( void ) const;
         std::string const & getType( void ) const;
@@ -20,11 +20,13 @@ class WrongAnimal
 
 class WrongCat : public WrongAnimal
 {
+    protected:
+        std::string _type;
     public:
         WrongCat( void );
-        WrongCat( std::string name );
+        WrongCat( std::string type );
         WrongCat( WrongCat const & rhs);
-        const WrongCat & operator=( WrongCat const &rhs) const;
+        const WrongCat & operator=( WrongCat const &rhs);
         ~WrongCat( void );
 };
 

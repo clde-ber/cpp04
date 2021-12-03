@@ -27,31 +27,36 @@ Character::Character(Character const & rhs)
     _Mat[3] = rhs._Mat[3];
 }
 
-const Character& Character::operator=(Character const & rhs) const
+const Character& Character::operator=(Character const & rhs)
 {
-    _type = rhs._type;
+    _name = rhs._name;
+    for (int i = 0; i < 4; i++)
+        _Mat[i] = rhs._Mat[i];
     return rhs;
 }
 
-destructor
+Character::~Character(void)
+{
+
+}
 
 void Character::use(int idx, ICharacter& target)
 {
-    this->_Mat[idx]->use(target);
+    _Mat[idx]->use(target);
 }
 
 std::string const & Character::getName() const
 {
-    return this->_name;
+    return _name;
 }
 
 void Character::equip(AMateria* m)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (this->_Mat[i] == 0)
+        if (_Mat[i] == 0)
         {
-           this->_Mat[i] = m;
+           _Mat[i] = m;
            break ;
         }
     }
@@ -59,10 +64,5 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-    this->_Mat[idx] = 0;
+    _Mat[idx] = 0;
 }
-/*
-AMateria* Character::clone() const
-{
-    return new AMateria(this->_type);
-}*/

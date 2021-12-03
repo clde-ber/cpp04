@@ -1,6 +1,6 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
-//std::system(afplay fichier.mp3)
+
 #include <iostream>
 #include "Materia.hpp"
 
@@ -24,8 +24,8 @@ class Character : public ICharacter
         Character( void );
         Character(std::string const & type );
         Character(Character const & rhs);
-        const Character& operator=(Character const & rhs) const;
-        ~Character() {}
+        const Character& operator=(Character const & rhs);
+        ~Character();
         std::string const &getName() const;
         void equip(AMateria* m);
         void unequip(int idx);

@@ -1,24 +1,40 @@
 #include "Materia.hpp"
 #include "Materiasource.hpp"
 
-MateriaSource::MateriaSource( void ) : _type("")
+MateriaSource::MateriaSource( void ) : _type("typeless")
 {
-
+    _Mat[0] = 0;
+    _Mat[1] = 0;
+    _Mat[2] = 0;
+    _Mat[3] = 0;
 }
 
 MateriaSource::MateriaSource( std::string const & type ) : _type(type)
 {
-
+    _Mat[0] = 0;
+    _Mat[1] = 0;
+    _Mat[2] = 0;
+    _Mat[3] = 0;
 }
 
 MateriaSource::MateriaSource(MateriaSource const & rhs) : _type(rhs._type)
 {
+    _Mat[0] = rhs._Mat[0];
+    _Mat[1] = rhs._Mat[1];
+    _Mat[2] = rhs._Mat[2];
+    _Mat[3] = rhs._Mat[3];
+}
+
+MateriaSource::~MateriaSource( void )
+{
 
 }
 
-const MateriaSource& MateriaSource::operator=(MateriaSource const & rhs) const
+const MateriaSource& MateriaSource::operator=(MateriaSource const & rhs)
 {
     _type = rhs._type;
+    for (int i = 0; i < 4; i++)
+        _Mat[i] = rhs._Mat[i];
     return rhs;
 }
 
@@ -26,8 +42,8 @@ void MateriaSource::learnMateria(AMateria* rhs)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (!(this->_Mat[i]))
-            this->_Mat[i] = rhs;
+        if (!(_Mat[i]))
+            _Mat[i] = rhs;
     }
 }
 

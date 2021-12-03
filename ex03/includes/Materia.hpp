@@ -8,14 +8,14 @@ class ICharacter;
 class AMateria
 {
     protected:
-        std::string const _type;
+        std::string _type;
     public:
         AMateria( void );
         AMateria( std::string const & type );
         AMateria(AMateria const & rhs);
-        const AMateria& operator=(AMateria const & rhs) const;
+        const AMateria& operator=(AMateria const & rhs);
         virtual ~AMateria( void );
-        std::string const & getType() const; //Returns the materia type
+        std::string const & getType() const;
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
 };
@@ -26,8 +26,8 @@ class Ice : public AMateria
         Ice( void );
         Ice( std::string const & type );
         Ice(Ice const & rhs);
-        const AMateria& operator=(AMateria const & rhs) const;
-        const Ice& operator=(Ice const & rhs) const;
+        const AMateria& operator=(AMateria const & rhs);
+        const Ice& operator=(Ice const & rhs);
         ~Ice( void );
         AMateria* clone() const;
         void use(ICharacter& target);
@@ -39,8 +39,8 @@ class Cure : public AMateria
         Cure( void );
         Cure( std::string const & type );
         Cure(Cure const & rhs);
-        const AMateria& operator=(AMateria const & rhs) const;
-        const Cure& operator=(Cure const & rhs) const;
+        const AMateria& operator=(AMateria const & rhs);
+        const Cure& operator=(Cure const & rhs);
         ~Cure( void );
         AMateria* clone() const;
         void use(ICharacter& target);

@@ -11,7 +11,7 @@ class Dog : public Animal
         Dog( void );
         Dog( std::string name );
         Dog( Dog const & rhs);
-        const Dog & operator=( Dog const &rhs) const;
+        const Dog & operator=( Dog const &rhs);
         ~Dog( void );
         void makeSound( void ) const;
 };

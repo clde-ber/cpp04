@@ -16,15 +16,15 @@ class IMateriaSource
 
 class MateriaSource : public IMateriaSource
 {
-     protected:
-        std::string const _type;
+    private:
+        std::string _type;
         AMateria* _Mat[4];
     public:
         MateriaSource( void );
         MateriaSource( std::string const & type );
         MateriaSource(MateriaSource const & rhs);
-        const MateriaSource& operator=(MateriaSource const & rhs) const;
-        ~MateriaSource() {}
+        const MateriaSource& operator=(MateriaSource const & rhs);
+        ~MateriaSource();
         void learnMateria(AMateria* rhs);
         AMateria* createMateria(std::string const & type);
 };

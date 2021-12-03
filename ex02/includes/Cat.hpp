@@ -14,7 +14,7 @@ class Cat : public Aanimal
         Cat( void );
         Cat( std::string name );
         Cat( Aanimal const & rhs);
-        const Cat & operator=( Cat const &rhs) const;
+        const Cat & operator=( Cat const &rhs);
         ~Cat( void );
         void makeSound( void ) const;
 };

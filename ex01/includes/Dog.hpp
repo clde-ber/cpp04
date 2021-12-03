@@ -4,7 +4,8 @@
 #include <iostream>
 #include <string>
 #include "Animal.hpp"
-#include "Brain.hpp"
+
+class Brain;
 
 class Dog : public Animal
 {
@@ -13,8 +14,8 @@ class Dog : public Animal
     public:
         Dog( void );
         Dog( std::string name );
-        Dog( Animal const & rhs);
-        const Dog & operator=( Dog const &rhs) const;
+        Dog( Dog const & rhs);
+        const Dog & operator=( Dog const &rhs);
         ~Dog( void );
         void makeSound( void ) const;
 };

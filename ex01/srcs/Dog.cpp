@@ -1,31 +1,32 @@
-#include "Animal.hpp"
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 Dog::Dog( void )
 {
-     _type("Dog");
-    this->_brain = new Brain("Dog idea");
+    _type = "Dog";
+    _brain = new Brain("Dog idea");
     std::cout << "Dog default constructor called" << std::endl;
 }
 
 Dog::Dog( std::string type )
 {
-     _type(type);
-    this->_brain = new Brain();
+    _type = type;
+    _brain = new Brain();
     std::cout << "Dog constructor called" << std::endl;
 }
 
-Dog::Dog( Animal const & rhs)
+Dog::Dog( Dog const & rhs)
 {
-     _type(rhs._type);
-    this->_brain = rhs._brain;
+    _type = rhs._type;
+    _brain = rhs._brain;
     std::cout << "Dog copy constructor called" << std::endl;
 }
 
-const Dog & Dog::operator=( Dog const &rhs) const
+const Dog & Dog::operator=( Dog const &rhs)
 {
     std::cout << "assignation operator called - Dog" << std::endl;
     _type = rhs._type;
+    _brain = rhs._brain;
     return rhs;
 }
 

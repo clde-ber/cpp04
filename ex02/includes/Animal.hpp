@@ -12,10 +12,10 @@ class Aanimal
         Aanimal( void );
         Aanimal( std::string type );
         Aanimal( Aanimal const & rhs);
-        const Aanimal & operator=( Aanimal const &rhs) const;
+        const Aanimal & operator=( Aanimal const &rhs);
         virtual ~Aanimal( void );
         virtual void makeSound( void ) const = 0;
-        std::string & etType( void ) const;
+        std::string const & getType( void ) const;
 };
 
 #endif

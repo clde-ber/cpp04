@@ -5,17 +5,13 @@
 
 int main()
 {
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    const Animal& refD = *j;
-    const Animal& refC = *i;
     const Animal* hybrid[10];
     const Animal* instanciable = new Animal();
 
     for (int x = 0; x < 5; x++)
-        hybrid[x] = new Cat(refC);
+        hybrid[x] = new Cat();
     for (int x = 5; x < 10; x++)
-        hybrid[x] = new Dog(refD);
+        hybrid[x] = new Dog();
     for (int x = 0; x < 10; x++)
         delete hybrid[x];
     delete instanciable;

@@ -6,13 +6,13 @@
 
 class WrongAnimal
 {
-    private:
+    protected:
         std::string _type;
     public:
         WrongAnimal( void );
         WrongAnimal( std::string type );
         WrongAnimal( WrongAnimal const & rhs);
-        const WrongAnimal & operator=( WrongAnimal const &rhs) const;
+        const WrongAnimal & operator=( WrongAnimal const &rhs);
         virtual ~WrongAnimal( void );
         void makeSound( void ) const;
         std::string const & getType( void ) const;
@@ -24,7 +24,7 @@ class WrongCat : public WrongAnimal
         WrongCat( void );
         WrongCat( std::string name );
         WrongCat( WrongCat const & rhs);
-        const WrongCat & operator=( WrongCat const &rhs) const;
+        const WrongCat & operator=( WrongCat const &rhs);
         ~WrongCat( void );
 };
 
