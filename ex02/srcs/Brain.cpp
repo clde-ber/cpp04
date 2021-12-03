@@ -24,6 +24,7 @@ Brain::Brain( Brain const & rhs)
 const Brain & Brain::operator=( Brain const &rhs) const
 {
     std::cout << "assignation operator called - Brain" << std::endl;
+    _type = rhs._type;
     return rhs;
 }
 

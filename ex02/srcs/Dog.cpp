@@ -24,6 +24,7 @@ Dog::Dog( Aanimal const & rhs)
 const Dog & Dog::operator=( Dog const &rhs) const
 {
     std::cout << "assignation operator called - Dog" << std::endl;
+    _type = rhs._type;
     return rhs;
 }
 

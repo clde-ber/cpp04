@@ -26,7 +26,7 @@ WrongAnimal::~WrongAnimal( void )
     std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
-std::string WrongAnimal::getType( void ) const
+std::string const & WrongAnimal::getType( void ) const
 {
     return (this->_type);
 }
@@ -36,26 +36,25 @@ void WrongAnimal::makeSound( void ) const
     std::cout << "Whatever WrongAnimal sound!" << std::endl;
 }
 
-WrongCat::WrongCat( void )
+WrongCat::WrongCat( void ) _type("nameless")
 {
     std::cout << "WrongCat default constructor called" << std::endl;
 }
 
-WrongCat::WrongCat( std::string type )
+WrongCat::WrongCat( std::string type ) : _type(type)
 {
-    (void)type;
     std::cout << "WrongCat constructor called" << std::endl;
 }
 
-WrongCat::WrongCat( WrongCat const & rhs)
+WrongCat::WrongCat( WrongCat const & rhs) : _type(rhs._type)
 {
-    (void)rhs;
     std::cout << "WrongCat copy constructor called" << std::endl;
 }
 
 const WrongCat & WrongCat::operator=( WrongCat const &rhs) const
 {
     std::cout << "assignation operator called - WrongCat" << std::endl;
+    _type = rhs._type;
     return rhs;
 }
 

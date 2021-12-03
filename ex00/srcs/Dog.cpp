@@ -3,24 +3,26 @@
 
 Dog::Dog( void )
 {
+    _type("Dog");
     std::cout << "Dog default constructor called" << std::endl;
 }
 
 Dog::Dog( std::string type )
 {
-    (void)type;
+    _type(type);
     std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog( Dog const & rhs)
 {
-    (void)rhs;
+    _type(rhs._type);
     std::cout << "Dog copy constructor called" << std::endl;
 }
 
 const Dog & Dog::operator=( Dog const &rhs) const
 {
     std::cout << "assignation operator called - Dog" << std::endl;
+    this->_type = rhs._type;
     return rhs;
 }
 

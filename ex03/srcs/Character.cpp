@@ -2,7 +2,7 @@
 
 Character::Character( void )
 {
-    _name = "";
+    _name = "nameless";
     _Mat[0] = 0;
     _Mat[1] = 0;
     _Mat[2] = 0;
@@ -21,16 +21,19 @@ Character::Character( std::string const & name )
 Character::Character(Character const & rhs)
 {
     _name = rhs._name;
-    _Mat[0] = 0;
-    _Mat[1] = 0;
-    _Mat[2] = 0;
-    _Mat[3] = 0;
+    _Mat[0] = rhs._Mat[0];
+    _Mat[1] = rhs._Mat[1];
+    _Mat[2] = rhs._Mat[2];
+    _Mat[3] = rhs._Mat[3];
 }
 
 const Character& Character::operator=(Character const & rhs) const
 {
+    _type = rhs._type;
     return rhs;
 }
+
+destructor
 
 void Character::use(int idx, ICharacter& target)
 {

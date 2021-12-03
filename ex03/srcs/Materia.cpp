@@ -2,7 +2,7 @@
 #include "Character.hpp"
 
 
-AMateria::AMateria( void ) : _type("")
+AMateria::AMateria( void ) : _type("unknown_type")
 {
 
 }
@@ -24,11 +24,13 @@ const AMateria& AMateria::operator=(AMateria const & rhs) const
 
 const Ice& Ice::operator=(Ice const & rhs) const
 {
+    _type = rhs._type;
     return rhs;
 }
 
 const Cure& Cure::operator=(Cure const & rhs) const
 {
+    _type = rhs._type;
     return rhs;
 }
 
@@ -45,20 +47,17 @@ std::string const & AMateria::getType() const
 
 Ice::Ice( void )
 {
-//    clone();
+    _type("ice");
 }
 
 Ice::Ice( std::string const & type )
 {
-    (void)type;
- //   AMateria* newM = new Ice(type);
- //   newM->clone();
+    _type(type);
 }
 
 Ice::Ice(Ice const & rhs)
 {
-    (void)rhs;
- //   rhs.clone();
+    _type(ths._type);
 }
 
 Ice::~Ice( void )
@@ -68,20 +67,17 @@ Ice::~Ice( void )
 
 Cure::Cure( void )
 {
-//    clone();
+    _type("cure");
 }
 
 Cure::Cure( std::string const & type )
 {
-    (void)type;
-//    AMateria* newM = new Cure(type);
- //   newM->clone();
+    _type(type);
 }
 
 Cure::Cure(Cure const & rhs)
 {
-    (void)rhs;
- //  rhs.clone();
+    _type(rhs._type);
 }
 
 Cure::~Cure( void )
@@ -101,12 +97,7 @@ AMateria* Cure::clone() const
 
 void AMateria::use(ICharacter& target)
 {
-    if (this->_type.compare("ice") == 0)
-        std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
-    if (this->_type.compare("cure") == 0)
-        std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
-    else
-        std::cout << "* unknown materia can't be used! *" << std::endl;
+    std::cout << "* unknown materia can't be used! *" << std::endl;
 }
 
 void Cure::use(ICharacter& target)

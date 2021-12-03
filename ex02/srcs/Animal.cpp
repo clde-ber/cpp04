@@ -18,6 +18,7 @@ Aanimal::Aanimal( Aanimal const & rhs) : _type(rhs._type)
 const Aanimal & Aanimal::operator=( Aanimal const &rhs) const
 {
     std::cout << "assignation operator called - Aanimal" << std::endl;
+    _type = rhs._type;
     return rhs;
 }
 
@@ -26,7 +27,7 @@ Aanimal::~Aanimal( void )
     std::cout << "Aanimal destructor called" << std::endl;
 }
 
-std::string Aanimal::getType( void ) const
+std::string const & Aanimal::getType( void ) const
 {
     return (this->_type);
 }

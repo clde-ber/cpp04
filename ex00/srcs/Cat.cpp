@@ -3,24 +3,26 @@
 
 Cat::Cat( void )
 {
+    _type("Cat");
     std::cout << "Cat default constructor called" << std::endl;
 }
 
 Cat::Cat( std::string type )
 {
-    (void)type;
+    _type(type);
     std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat::Cat( Cat const & rhs)
 {
-    (void)rhs;
+    _type(rhs._type);
     std::cout << "Cat copy constructor called" << std::endl;
 }
 
 const Cat & Cat::operator=( Cat const &rhs) const
 {
     std::cout << "assignation operator called - Cat" << std::endl;
+    _type = rhs._type;
     return rhs;
 }
 

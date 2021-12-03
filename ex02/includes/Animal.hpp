@@ -15,7 +15,7 @@ class Aanimal
         const Aanimal & operator=( Aanimal const &rhs) const;
         virtual ~Aanimal( void );
         virtual void makeSound( void ) const = 0;
-        std::string getType( void ) const;
+        std::string & etType( void ) const;
 };
 
 #endif

@@ -24,6 +24,7 @@ Cat::Cat( Aanimal const & rhs)
 const Cat & Cat::operator=( Cat const &rhs) const
 {
     std::cout << "assignation operator called - Cat" << std::endl;
+    _type = rhs._type;
     return rhs;
 }
 

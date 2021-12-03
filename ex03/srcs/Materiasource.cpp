@@ -18,6 +18,7 @@ MateriaSource::MateriaSource(MateriaSource const & rhs) : _type(rhs._type)
 
 const MateriaSource& MateriaSource::operator=(MateriaSource const & rhs) const
 {
+    _type = rhs._type;
     return rhs;
 }
 
