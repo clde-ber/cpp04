@@ -18,8 +18,8 @@ Animal::Animal( Animal const & rhs) : _type(rhs._type)
 const Animal & Animal::operator=( Animal const &rhs)
 {
     std::cout << "assignation operator called - Animal" << std::endl;
-    _type = rhs._type;
-    return rhs;
+    new (this) Animal(rhs);
+    return *this;
 }
 
 Animal::~Animal( void )

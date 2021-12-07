@@ -16,16 +16,16 @@ Dog::Dog( std::string type )
 
 Dog::Dog( Aanimal const & rhs)
 {
-    _brain = new Brain();
     _type = rhs.getType();
+    _brain = new Brain("animal_brain");
     std::cout << "Dog copy constructor called" << std::endl;
 }
 
 const Dog & Dog::operator=( Dog const &rhs)
 {
     std::cout << "assignation operator called - Dog" << std::endl;
-    _type = rhs._type;
-    return rhs;
+    new (this) Dog(rhs);
+    return *this;
 }
 
 Dog::~Dog( void )

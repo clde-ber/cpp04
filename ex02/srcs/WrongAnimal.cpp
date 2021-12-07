@@ -18,8 +18,8 @@ WrongAnimal::WrongAnimal( WrongAnimal const & rhs) : _type(rhs._type)
 const WrongAnimal & WrongAnimal::operator=( WrongAnimal const &rhs)
 {
     std::cout << "assignation operator called - WrongAnimal" << std::endl;
-    _type = rhs._type;
-    return rhs;
+    new (this) WrongAnimal(rhs);
+    return *this;
 }
 
 WrongAnimal::~WrongAnimal( void )
@@ -58,8 +58,8 @@ WrongCat::WrongCat( WrongCat const & rhs)
 const WrongCat & WrongCat::operator=( WrongCat const &rhs)
 {
     std::cout << "assignation operator called - WrongCat" << std::endl;
-    _type = rhs._type;
-    return rhs;
+    new (this) WrongCat(rhs);
+    return *this;
 }
 
 WrongCat::~WrongCat( void )

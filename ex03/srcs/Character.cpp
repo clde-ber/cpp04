@@ -29,10 +29,8 @@ Character::Character(Character const & rhs)
 
 const Character& Character::operator=(Character const & rhs)
 {
-    _name = rhs._name;
-    for (int i = 0; i < 4; i++)
-        _Mat[i] = rhs._Mat[i];
-    return rhs;
+    new (this) Character(rhs);
+    return *this;
 }
 
 Character::~Character(void)

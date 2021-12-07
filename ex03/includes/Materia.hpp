@@ -11,9 +11,6 @@ class AMateria
         std::string _type;
     public:
         AMateria( void );
-        AMateria( std::string const & type );
-        AMateria(AMateria const & rhs);
-        const AMateria& operator=(AMateria const & rhs);
         virtual ~AMateria( void );
         std::string const & getType() const;
         virtual AMateria* clone() const = 0;

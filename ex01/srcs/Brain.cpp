@@ -24,9 +24,8 @@ Brain::Brain( Brain const & rhs)
 const Brain & Brain::operator=( Brain const &rhs)
 {
     std::cout << "assignation operator called - Brain" << std::endl;
-    for (int i = 0; i < 100; i++)
-        _ideas[i] = rhs._ideas[i];
-    return rhs;
+    new (this) Brain(rhs);
+    return *this;
 }
 
 Brain::~Brain( void )

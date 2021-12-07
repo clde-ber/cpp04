@@ -7,38 +7,21 @@ AMateria::AMateria( void ) : _type("unknown_type")
 
 }
 
-AMateria::AMateria( std::string const & type ) : _type(type)
-{
-
-}
-
-AMateria::AMateria(AMateria const & rhs) : _type(rhs._type)
-{
-
-}
-
 AMateria::~AMateria(void)
 {
 
 }
 
-
-const AMateria& AMateria::operator=(AMateria const & rhs)
-{
-    _type = rhs._type;
-    return rhs;
-}
-
 const Ice& Ice::operator=(Ice const & rhs)
 {
-    _type = rhs._type;
-    return rhs;
+    new (this) Ice(rhs);
+    return *this;
 }
 
 const Cure& Cure::operator=(Cure const & rhs)
 {
-    _type = rhs._type;
-    return rhs;
+    new (this) Cure(rhs);
+    return *this;
 }
 
 std::string const & AMateria::getType() const

@@ -32,10 +32,8 @@ MateriaSource::~MateriaSource( void )
 
 const MateriaSource& MateriaSource::operator=(MateriaSource const & rhs)
 {
-    _type = rhs._type;
-    for (int i = 0; i < 4; i++)
-        _Mat[i] = rhs._Mat[i];
-    return rhs;
+    new (this) MateriaSource(rhs);
+    return *this;
 }
 
 void MateriaSource::learnMateria(AMateria* rhs)
