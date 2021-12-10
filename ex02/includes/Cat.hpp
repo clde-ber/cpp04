@@ -12,8 +12,8 @@ class Cat : public Aanimal
         Brain* _brain;
     public:
         Cat( void );
-        Cat( std::string name );
-        Cat( Aanimal const & rhs);
+        Cat( std::string type );
+        Cat( Cat const & rhs);
         const Cat & operator=( Cat const &rhs);
         ~Cat( void );
         void makeSound( void ) const;

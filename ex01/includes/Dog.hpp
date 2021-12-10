@@ -13,7 +13,7 @@ class Dog : public Animal
         Brain* _brain;
     public:
         Dog( void );
-        Dog( std::string name );
+        Dog( std::string type );
         Dog( Dog const & rhs);
         const Dog & operator=( Dog const &rhs);
         ~Dog( void );

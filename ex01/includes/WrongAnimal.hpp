@@ -6,7 +6,7 @@
 
 class WrongAnimal
 {
-    private:
+    protected:
         std::string _type;
     public:
         WrongAnimal( void );
@@ -20,8 +20,6 @@ class WrongAnimal
 
 class WrongCat : public WrongAnimal
 {
-    protected:
-        std::string _type;
     public:
         WrongCat( void );
         WrongCat( std::string type );

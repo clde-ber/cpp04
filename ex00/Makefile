@@ -54,3 +54,8 @@ re	:			fclean all
 .PHONY	:		all clean fclean re
 
 -include	$(DEPS)
+
+#appeler les constructeurs
+#operator=
+#copy constructor
+#getters et setters

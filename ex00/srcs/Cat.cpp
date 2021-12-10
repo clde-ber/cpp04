@@ -9,7 +9,7 @@ Cat::Cat( void )
 
 Cat::Cat( std::string type )
 {
-    type = type;
+    _type = type;
     std::cout << "Cat constructor called" << std::endl;
 }
 

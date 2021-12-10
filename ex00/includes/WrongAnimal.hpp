@@ -22,7 +22,7 @@ class WrongCat : public WrongAnimal
 {
     public:
         WrongCat( void );
-        WrongCat( std::string name );
+        WrongCat( std::string type );
         WrongCat( WrongCat const & rhs);
         const WrongCat & operator=( WrongCat const &rhs);
         ~WrongCat( void );

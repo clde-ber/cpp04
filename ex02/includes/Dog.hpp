@@ -12,8 +12,8 @@ class Dog : public Aanimal
         Brain* _brain;
     public:
         Dog( void );
-        Dog( std::string name );
-        Dog( Aanimal const & rhs);
+        Dog( std::string type );
+        Dog( Dog const & rhs);
         const Dog & operator=( Dog const &rhs);
         ~Dog( void );
         void makeSound( void ) const;

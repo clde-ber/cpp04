@@ -14,9 +14,9 @@ Cat::Cat( std::string type )
     std::cout << "Cat constructor called" << std::endl;
 }
 
-Cat::Cat( Aanimal const & rhs)
+Cat::Cat( Cat const & rhs)
 {
-    _type = rhs.getType();
+    _type = rhs._type;
     _brain = new Brain("animal_brain");
     std::cout << "Cat copy constructor called" << std::endl;
 }

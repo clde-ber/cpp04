@@ -11,14 +11,14 @@ Dog::Dog( void )
 Dog::Dog( std::string type )
 {
     _type = type;
-    _brain = new Brain();
+    _brain = new Brain(type);
     std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog( Dog const & rhs)
 {
     _type = rhs._type;
-    _brain = new Brain(rhs._brain);
+    _brain = new Brain(*rhs._brain);
     std::cout << "Dog copy constructor called" << std::endl;
 }
 

@@ -40,7 +40,14 @@ Character::~Character(void)
 
 void Character::use(int idx, ICharacter& target)
 {
-    _Mat[idx]->use(target);
+    int i = 0;
+
+    while (_Mat[i])
+        i++;
+    if (idx < i)
+        _Mat[idx]->use(target);
+    else
+        std::cout << "No materia or a typeless materia cannot be used!" << std::endl;
 }
 
 std::string const & Character::getName() const
