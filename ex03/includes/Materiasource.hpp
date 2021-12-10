@@ -22,9 +22,8 @@ class MateriaSource : public IMateriaSource
         void printMat(AMateria** const rhs) const;
     public:
         MateriaSource( void );
-        MateriaSource( std::string const & type );
         MateriaSource(MateriaSource const & rhs);
-        const MateriaSource& operator=(MateriaSource const & rhs);
+        MateriaSource& operator=(MateriaSource const & rhs);
         ~MateriaSource();
         void learnMateria(AMateria* rhs);
         AMateria* createMateria(std::string const & type);

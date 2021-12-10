@@ -3,18 +3,8 @@
 
 MateriaSource::MateriaSource( void ) : _type("typeless")
 {
-    _Mat[0] = 0;
-    _Mat[1] = 0;
-    _Mat[2] = 0;
-    _Mat[3] = 0;
-}
-
-MateriaSource::MateriaSource( std::string const & type ) : _type(type)
-{
-    _Mat[0] = 0;
-    _Mat[1] = 0;
-    _Mat[2] = 0;
-    _Mat[3] = 0;
+    for (int i = 0; i < 4; i++)
+        _Mat[i] = 0;
 }
 
 MateriaSource::MateriaSource(MateriaSource const & rhs)
@@ -24,16 +14,18 @@ MateriaSource::MateriaSource(MateriaSource const & rhs)
 
 MateriaSource::~MateriaSource( void )
 {
-
+    for (int i = 0; i < 4; i++)
+    {
+        if (_Mat[i])
+            delete _Mat[i];
+    }
 }
 
-const MateriaSource& MateriaSource::operator=(MateriaSource const & rhs)
+MateriaSource& MateriaSource::operator=(MateriaSource const & rhs)
 {
-    _type = rhs._type;
-    _Mat[0] = rhs._Mat[0];
-    _Mat[1] = rhs._Mat[1];
-    _Mat[2] = rhs._Mat[2];
-    _Mat[3] = rhs._Mat[3];
+    this->~MateriaSource();
+    for (int i = 0; i < 4; i++)
+        learnMateria(rhs._Mat[i]->clone());
     return *this;
 }
 
@@ -58,9 +50,9 @@ void MateriaSource::learnMateria(AMateria* rhs)
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
     if (type.compare("ice") == 0)
-        return new Ice(type);
+        return new Ice();
     if (type.compare("cure") == 0)
-        return new Cure(type);
+        return new Cure();
     return 0;
 }
 

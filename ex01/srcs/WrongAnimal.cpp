@@ -37,19 +37,19 @@ void WrongAnimal::makeSound( void ) const
     std::cout << "Whatever WrongAnimal sound!" << std::endl;
 }
 
-WrongCat::WrongCat( void )
+WrongCat::WrongCat( void ) : WrongAnimal()
 {
     std::cout << "WrongCat default constructor called" << std::endl;
     _type = "nameless";
 }
 
-WrongCat::WrongCat( std::string type )
+WrongCat::WrongCat( std::string type ) : WrongAnimal(type)
 {
     std::cout << "WrongCat constructor called" << std::endl;
     _type = type;
 }
 
-WrongCat::WrongCat( WrongCat const & rhs)
+WrongCat::WrongCat( WrongCat const & rhs) : WrongAnimal(rhs)
 {
     std::cout << "WrongCat copy constructor called" << std::endl;
     _type = rhs._type;

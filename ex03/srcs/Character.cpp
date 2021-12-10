@@ -23,19 +23,22 @@ Character::Character(Character const & rhs)
     *this = rhs;
 }
 
-const Character& Character::operator=(Character const & rhs)
+Character& Character::operator=(Character const & rhs)
 {
-    _name = rhs._name;
-    _Mat[0] = rhs._Mat[0];
-    _Mat[1] = rhs._Mat[1];
-    _Mat[2] = rhs._Mat[2];
-    _Mat[3] = rhs._Mat[3];
+    this->~Character();
+    for (int i = 0; i < 4; i++)
+        equip(rhs._Mat[i]->clone());
     return *this;
 }
 
 Character::~Character(void)
 {
-
+    for (int i = 0; i < 4; i++)
+    {
+        if (_Mat[i])
+            delete _Mat[i];
+        unequip(i);
+    }
 }
 
 void Character::use(int idx, ICharacter& target)

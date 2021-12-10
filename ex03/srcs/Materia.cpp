@@ -19,7 +19,7 @@ AMateria::AMateria( AMateria const & rhs )
 
 AMateria & AMateria::operator=(AMateria const & rhs)
 {
-    _type = rhs._type;
+    (void)rhs;
     return *this;
 }
 
@@ -28,15 +28,15 @@ AMateria::~AMateria(void)
 
 }
 
-const Ice& Ice::operator=(Ice const & rhs)
+Ice& Ice::operator=(Ice const & rhs)
 {
-    _type = rhs._type;
+    (void)rhs;
     return *this;
 }
 
-const Cure& Cure::operator=(Cure const & rhs)
+Cure& Cure::operator=(Cure const & rhs)
 {
-    _type = rhs._type;
+    (void)rhs;
     return *this;
 }
 
@@ -45,17 +45,10 @@ std::string const & AMateria::getType() const
     return _type;
 }
 
-Ice::Ice( void )
-{
-    _type = "ice";
-}
+Ice::Ice( void ) : AMateria("ice") {}
 
-Ice::Ice( std::string const & type )
-{
-    _type = type;
-}
 
-Ice::Ice(Ice const & rhs)
+Ice::Ice(Ice const & rhs) : AMateria("ice")
 {
     *this = rhs;
 }
@@ -65,17 +58,9 @@ Ice::~Ice( void )
 
 }
 
-Cure::Cure( void )
-{
-    _type = "cure";
-}
+Cure::Cure( void ): AMateria("cure") {}
 
-Cure::Cure( std::string const & type )
-{
-    _type = type;
-}
-
-Cure::Cure(Cure const & rhs)
+Cure::Cure(Cure const & rhs) : AMateria("cure")
 {
     *this = rhs;
 }
@@ -87,12 +72,12 @@ Cure::~Cure( void )
 
 AMateria* Ice::clone() const
 {
-    return new Ice(_type);
+    return new Ice();
 }
 
 AMateria* Cure::clone() const
 {
-    return new Cure(_type);
+    return new Cure();
 }
 
 void AMateria::use(ICharacter& target)
