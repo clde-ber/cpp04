@@ -55,7 +55,10 @@ re	:			fclean all
 
 -include	$(DEPS)
 
-#appeler les constructeurs
+#appeler les constructeurs #initialisation list // constructors
 #operator=
 #copy constructor
 #getters et setters
+#virtual destructor
+#public necessity ?
+#deep copy character & materiasource (try scope)

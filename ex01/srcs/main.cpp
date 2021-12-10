@@ -5,14 +5,16 @@
 
 int main()
 {
-    const Animal* hybrid[10];
-    const Animal* instanciable = new Animal();
+  //  const Animal* hybrid[10];
+  //  const Animal* instanciable = new Animal();
+    Dog basic;
+    {Dog tmp = basic;}
 
-    for (int x = 0; x < 5; x++)
+  /*  for (int x = 0; x < 5; x++)
         hybrid[x] = new Cat();
     for (int x = 5; x < 10; x++)
         hybrid[x] = new Dog();
     for (int x = 0; x < 10; x++)
         delete hybrid[x];
     delete instanciable;
-}
+*/}

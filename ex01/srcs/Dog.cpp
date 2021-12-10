@@ -17,15 +17,15 @@ Dog::Dog( std::string type )
 
 Dog::Dog( Dog const & rhs)
 {
-    _type = rhs._type;
-    _brain = new Brain(*rhs._brain);
+    *this = rhs;
     std::cout << "Dog copy constructor called" << std::endl;
 }
 
 const Dog & Dog::operator=( Dog const &rhs)
 {
     std::cout << "assignation operator called - Dog" << std::endl;
-    new (this) Dog(rhs);
+    _type = rhs._type;
+    _brain = new Brain(*rhs._brain);
     return *this;
 }
 

@@ -19,6 +19,7 @@ class MateriaSource : public IMateriaSource
     private:
         std::string _type;
         AMateria* _Mat[4];
+        void printMat(AMateria** const rhs) const;
     public:
         MateriaSource( void );
         MateriaSource( std::string const & type );

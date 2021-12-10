@@ -20,16 +20,16 @@ Character::Character( std::string const & name )
 
 Character::Character(Character const & rhs)
 {
+    *this = rhs;
+}
+
+const Character& Character::operator=(Character const & rhs)
+{
     _name = rhs._name;
     _Mat[0] = rhs._Mat[0];
     _Mat[1] = rhs._Mat[1];
     _Mat[2] = rhs._Mat[2];
     _Mat[3] = rhs._Mat[3];
-}
-
-const Character& Character::operator=(Character const & rhs)
-{
-    new (this) Character(rhs);
     return *this;
 }
 
@@ -40,14 +40,10 @@ Character::~Character(void)
 
 void Character::use(int idx, ICharacter& target)
 {
-    int i = 0;
-
-    while (_Mat[i])
-        i++;
-    if (idx < i)
+    if (idx < 4 and _Mat[idx])
         _Mat[idx]->use(target);
     else
-        std::cout << "No materia or a typeless materia cannot be used!" << std::endl;
+        std::cout << "No materia cannot be used!" << std::endl;
 }
 
 std::string const & Character::getName() const
@@ -69,5 +65,6 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-    _Mat[idx] = 0;
+    if (idx < 4 and idx >= 0)
+        _Mat[idx] = 0;
 }

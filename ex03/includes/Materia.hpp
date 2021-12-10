@@ -11,6 +11,9 @@ class AMateria
         std::string _type;
     public:
         AMateria( void );
+        AMateria( std::string const & type );
+        AMateria( AMateria const & rhs);
+        AMateria & operator=(AMateria const & rhs);
         virtual ~AMateria( void );
         std::string const & getType() const;
         virtual AMateria* clone() const = 0;
@@ -23,7 +26,6 @@ class Ice : public AMateria
         Ice( void );
         Ice( std::string const & type );
         Ice(Ice const & rhs);
-        const AMateria& operator=(AMateria const & rhs);
         const Ice& operator=(Ice const & rhs);
         ~Ice( void );
         AMateria* clone() const;
@@ -36,7 +38,6 @@ class Cure : public AMateria
         Cure( void );
         Cure( std::string const & type );
         Cure(Cure const & rhs);
-        const AMateria& operator=(AMateria const & rhs);
         const Cure& operator=(Cure const & rhs);
         ~Cure( void );
         AMateria* clone() const;
