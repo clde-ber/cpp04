@@ -16,7 +16,7 @@ Brain::Brain( std::string idea )
 
 Brain::Brain( Brain const & rhs)
 {
-    std::cout << "Brain copy constructor called" << std::endl;
+    std::cout << "Brain copy constructor with 100 \"" << *rhs._ideas << "\" ideas" << std::endl;
     *this = rhs;
 }
 

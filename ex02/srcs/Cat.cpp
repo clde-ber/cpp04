@@ -8,7 +8,7 @@ Cat::Cat( void ) : Aanimal()
     _brain = new Brain("Cat idea");
 }
 
-Cat::Cat( std::string type ) : Aanimal()
+Cat::Cat( std::string type ) : Aanimal(type)
 {
     std::cout << "Cat constructor called" << std::endl;
     type = "Cat";
