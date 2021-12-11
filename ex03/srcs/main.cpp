@@ -39,9 +39,7 @@ int main()
     } 
     AMateria* tmpC = src->createMateria("cure");
     AMateria* tmpUT = src->createMateria("");
-    std::cout << "heheheheh" << std::endl;
     AMateria* tmpII = src->createMateria("ice");
-    std::cout << "heheheheh" << std::endl;
     ICharacter* bob = new Character("bob");
     me->equip(tmpI);
     me->use(0, *bob);

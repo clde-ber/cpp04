@@ -8,7 +8,7 @@ class ICharacter;
 class AMateria
 {
     protected:
-        std::string const _type;
+        std::string _type;
     public:
         AMateria( void );
         AMateria( std::string const & type );
@@ -18,28 +18,6 @@ class AMateria
         std::string const & getType() const;
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
-};
-
-class Ice : public AMateria
-{
-    public:
-        Ice( void );
-        Ice(Ice const & rhs);
-        Ice& operator=(Ice const & rhs);
-        ~Ice( void );
-        AMateria* clone() const;
-        void use(ICharacter& target);
-};
-
-class Cure : public AMateria
-{
-    public:
-        Cure( void );
-        Cure(Cure const & rhs);
-        Cure& operator=(Cure const & rhs);
-        ~Cure( void );
-        AMateria* clone() const;
-        void use(ICharacter& target);
 };
 
 #endif

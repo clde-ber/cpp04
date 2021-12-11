@@ -56,9 +56,14 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
+    if (!m)
+    {
+        std::cout << "Cannot equip with non existent materia!" << std::endl;
+        return ;
+    }
     for (int i = 0; i < 4; i++)
     {
-        if (_Mat[i] == 0)
+        if (_Mat[i])
         {
            _Mat[i] = m;
            break ;

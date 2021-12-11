@@ -2,9 +2,9 @@
 #ifndef MATERIASOURCE_H
 #define MATERIASOURCE_H
 #include <iostream>
+#include "Ice.hpp"
+#include "Cure.hpp"
 class AMateria;
-class Ice;
-class Cure;
 
 class IMateriaSource
 {
@@ -19,7 +19,7 @@ class MateriaSource : public IMateriaSource
     private:
         std::string _type;
         AMateria* _Mat[4];
-        void printMat(AMateria** const rhs) const;
+        void printMat() const;
     public:
         MateriaSource( void );
         MateriaSource(MateriaSource const & rhs);

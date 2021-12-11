@@ -3,6 +3,8 @@
 NAME	=	Material
 LIST	=	main \
 			Materia \
+			Ice \
+			Cure \
 			Character \
 			Materiasource \
 			
