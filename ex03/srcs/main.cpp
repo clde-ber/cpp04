@@ -59,7 +59,7 @@ int main()
     delete noLeaks;
     delete full;
     delete bob;
-    delete me;
+    delete me3;
     delete src;
 
     // IMateriaSource* src = new MateriaSource();
