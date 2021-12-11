@@ -32,6 +32,7 @@ int main()
         ICharacter *me2;
         me2 = me;
     }
+    ICharacter* me3 = me;
     AMateria* tmpI = src->createMateria("ice");
     {
          AMateria* tmp;
@@ -41,20 +42,20 @@ int main()
     AMateria* tmpUT = src->createMateria("");
     AMateria* tmpII = src->createMateria(ice->getType());
     ICharacter* bob = new Character("bob");
-    me->equip(tmpI);
-    me->use(0, *bob);
-    me->equip(tmpC);
-    me->use(1, *bob);
-    me->equip(tmpUT);
-    me->use(2, *bob);
-    me->equip(tmpII);
+    me3->equip(tmpI);
+    me3->use(0, *bob);
+    me3->equip(tmpC);
+    me3->use(1, *bob);
+    me3->equip(tmpUT);
+    me3->use(2, *bob);
+    me3->equip(tmpII);
     AMateria *noLeaks = tmpC;
-    me->unequip(1);
-    me->use(1, *bob);
-    me->use(4, *bob);
-    me->unequip(5);
-    me->unequip(-5);
-    me->equip(NULL);
+    me3->unequip(1);
+    me3->use(1, *bob);
+    me3->use(4, *bob);
+    me3->unequip(5);
+    me3->unequip(-5);
+    me3->equip(NULL);
     delete noLeaks;
     delete full;
     delete bob;
