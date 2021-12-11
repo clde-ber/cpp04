@@ -17,15 +17,15 @@ Cat::Cat( std::string type ) : Animal(type)
 
 Cat::Cat( Cat const & rhs) : Animal(rhs)
 {
-    _type = rhs._type;
-    _brain = new Brain(*rhs._brain);
     std::cout << "Cat copy constructor called" << std::endl;
+    *this = rhs;
 }
 
 const Cat & Cat::operator=( Cat const &rhs)
 {
     std::cout << "assignation operator called - Cat" << std::endl;
-    new (this) Cat(rhs);
+    _type = rhs._type;
+    _brain = new Brain(*rhs._brain);
     return *this;
 }
 

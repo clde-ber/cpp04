@@ -1,6 +1,6 @@
 #include "Animal.hpp"
 
-Aanimal::Aanimal( void ) : _type("typeless")
+Aanimal::Aanimal( void )
 {
     std::cout << "Aanimal default constructor called" << std::endl;
 }

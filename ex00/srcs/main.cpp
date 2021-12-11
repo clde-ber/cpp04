@@ -8,7 +8,7 @@ int main()
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
-    const WrongAnimal* wA = new WrongCat();
+    const WrongAnimal* wA = new WrongAnimal();
     const WrongCat* wC = new WrongCat();
 
     std::cout << j->getType() << " " << std::endl;
@@ -18,8 +18,8 @@ int main()
     meta->makeSound();
     std::cout << wA->getType() << " " << std::endl;
     std::cout << wC->getType() << " " << std::endl;
-    i->makeSound(); //will output the animal sound!
-    j->makeSound();
+    wA->makeSound(); //will output the animal sound!
+    wC->makeSound();
     delete meta;
     delete i;
     delete j;

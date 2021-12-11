@@ -13,7 +13,7 @@ Dog::Dog( std::string type ) : Animal(type)
     std::cout << "Dog constructor called" << std::endl;
 }
 
-Dog::Dog( Dog const & rhs) : : Animal(rhs)
+Dog::Dog( Dog const & rhs) : Animal(rhs)
 {
     _type = rhs._type;
     std::cout << "Dog copy constructor called" << std::endl;

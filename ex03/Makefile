@@ -1,6 +1,6 @@
 .SUFFIXES:
 
-NAME	=	Material
+NAME	=	materia
 LIST	=	main \
 			Materia \
 			Ice \
