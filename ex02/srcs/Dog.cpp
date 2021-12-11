@@ -1,14 +1,14 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-Dog::Dog( void )
+Dog::Dog( void ) : Aanimal()
 {
     std::cout << "Dog default constructor called" << std::endl;
     _type = "Dog";
     _brain = new Brain("Dog idea");
 }
 
-Dog::Dog( std::string type )
+Dog::Dog( std::string type ) : Aanimal()
 {
     std::cout << "Dog constructor called" << std::endl;
     type = "Dog";
@@ -16,7 +16,7 @@ Dog::Dog( std::string type )
     _brain = new Brain(type);
 }
 
-Dog::Dog( Dog const & rhs)
+Dog::Dog( Dog const & rhs) : Aanimal(rhs)
 {
     std::cout << "Dog copy constructor called" << std::endl;
     *this = rhs;

@@ -3,23 +3,23 @@
 
 Dog::Dog( void ) : Animal()
 {
+    std::cout << "Dog default constructor called" << std::endl;
     _type = "Dog";
     _brain = new Brain("Dog idea");
-    std::cout << "Dog default constructor called" << std::endl;
 }
 
 Dog::Dog( std::string type ) : Animal(type)
 {
+    std::cout << "Dog constructor called" << std::endl;
     type = "Dog";
     _type = type;
     _brain = new Brain(type);
-    std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog( Dog const & rhs) : Animal(rhs)
 {
-    *this = rhs;
     std::cout << "Dog copy constructor called" << std::endl;
+    *this = rhs;
 }
 
 Dog & Dog::operator=( Dog const &rhs)

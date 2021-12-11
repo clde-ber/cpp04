@@ -25,7 +25,7 @@ class WrongCat : public WrongAnimal
         WrongCat( std::string type );
         WrongCat( WrongCat const & rhs);
         WrongCat & operator=( WrongCat const &rhs);
-        ~WrongCat( void );
+        virtual ~WrongCat( void );
 };
 
 #endif
