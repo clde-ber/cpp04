@@ -3,16 +3,17 @@
 
 Cat::Cat( void ) : Animal()
 {
+    std::cout << "Cat default constructor called" << std::endl;
     _type = "Cat";
     _brain = new Brain("Cat idea");
-    std::cout << "Cat default constructor called" << std::endl;
 }
 
 Cat::Cat( std::string type ) : Animal(type)
 {
+    std::cout << "Cat constructor called" << std::endl;
+    type = "Cat";
     _type = type;
     _brain = new Brain(type);
-    std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat::Cat( Cat const & rhs) : Animal(rhs)
@@ -21,7 +22,7 @@ Cat::Cat( Cat const & rhs) : Animal(rhs)
     *this = rhs;
 }
 
-const Cat & Cat::operator=( Cat const &rhs)
+Cat & Cat::operator=( Cat const &rhs)
 {
     std::cout << "assignation operator called - Cat" << std::endl;
     _type = rhs._type;
@@ -31,8 +32,8 @@ const Cat & Cat::operator=( Cat const &rhs)
 
 Cat::~Cat( void )
 {
-    std::cout << "Cat destructor called" << std::endl;
     delete _brain;
+    std::cout << "Cat destructor called" << std::endl;
 }
 
 

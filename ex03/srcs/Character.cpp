@@ -1,21 +1,15 @@
 #include "Character.hpp"
 
-Character::Character( void )
+Character::Character( void ) : _name("random character")
 {
-    _name = "nameless";
-    _Mat[0] = 0;
-    _Mat[1] = 0;
-    _Mat[2] = 0;
-    _Mat[3] = 0;
+    for (int i = 0; i < 4; i++)
+        _Mat[i] = 0;
 }
 
-Character::Character( std::string const & name )
+Character::Character( std::string const & name ) : _name(name)
 {
-    _name = name;
-    _Mat[0] = 0;
-    _Mat[1] = 0;
-    _Mat[2] = 0;
-    _Mat[3] = 0;
+    for (int i = 0; i < 4; i++)
+        _Mat[i] = 0;
 }
 
 Character::Character(Character const & rhs)
@@ -43,10 +37,8 @@ Character::~Character(void)
 
 void Character::use(int idx, ICharacter& target)
 {
-    if (idx < 4 and _Mat[idx])
+    if (idx < 4 and idx >= 0 and _Mat[idx])
         _Mat[idx]->use(target);
-    else
-        std::cout << "No materia cannot be used!" << std::endl;
 }
 
 std::string const & Character::getName() const
@@ -63,7 +55,7 @@ void Character::equip(AMateria* m)
     }
     for (int i = 0; i < 4; i++)
     {
-        if (_Mat[i])
+        if (!_Mat[i])
         {
            _Mat[i] = m;
            break ;
@@ -73,6 +65,6 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-    if (idx < 4 and idx >= 0)
+    if (idx < 4 and idx >= 0 and _Mat[idx])
         _Mat[idx] = 0;
 }

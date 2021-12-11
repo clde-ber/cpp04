@@ -7,8 +7,8 @@ int main()
 {
     const Animal* hybrid[10];
     const Animal* instanciable = new Animal();
-    Cat test;
-    {
+    {  
+      Cat test;
       Cat tmp = test;
     }
     for (int x = 0; x < 5; x++)
@@ -18,4 +18,4 @@ int main()
     for (int x = 0; x < 10; x++)
         delete hybrid[x];
     delete instanciable;
-  }
+}

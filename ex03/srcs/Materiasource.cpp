@@ -17,10 +17,8 @@ MateriaSource::~MateriaSource( void )
     for (int i = 0; i < 4; i++)
     {
         if (_Mat[i])
-        {
             delete _Mat[i];
-            _Mat[i] = 0;
-        }
+        _Mat[i] = 0;
     }
 }
 
@@ -28,7 +26,10 @@ MateriaSource& MateriaSource::operator=(MateriaSource const & rhs)
 {
     this->~MateriaSource();
     for (int i = 0; i < 4; i++)
-        learnMateria(rhs._Mat[i]->clone());
+    {
+        if (rhs._Mat[i])
+            learnMateria(rhs._Mat[i]->clone());
+    }
     return *this;
 }
 
@@ -45,28 +46,31 @@ void MateriaSource::learnMateria(AMateria* rhs)
     {
         if (!_Mat[i])
         {
-            _Mat[i] = rhs->clone();
+            _Mat[i] = rhs;
             break ;
         }
         i++;
     }
-    printMat();
     if (i == 4)
-        std::cout << "Cannot add a materia : inventory is full!" << std::endl;
+    {
+        std::cout << "Cannot learn a new materia : inventory is full!" << std::endl;
+        return ;
+    }
+    printMat();
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-    if (type.compare("ice") == 0)
+    if (type == "ice")
         return new Ice();
-    if (type.compare("cure") == 0)
+    if (type == "cure")
         return new Cure();
     return 0;
 }
 
 void MateriaSource::printMat() const
 {
-    std::cout << "Materiasource : " << _type << " inventory state" << std::endl;
+    std::cout << "Materiasource : inventory state" << std::endl;
     for (int i = 0; i < 4; i++)
     {
         if (_Mat[i])

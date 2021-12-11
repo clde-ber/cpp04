@@ -4,16 +4,16 @@
 
 Cure& Cure::operator=(Cure const & rhs)
 {
-    _type = rhs._type;
+    (void)rhs;
     return *this;
 }
 
-Cure::Cure( void ): AMateria("Cure") 
+Cure::Cure( void ): AMateria("cure")
 {
-    _type = "Cure";
+
 }
 
-Cure::Cure(Cure const & rhs) : AMateria("Cure")
+Cure::Cure(Cure const & rhs) : AMateria("cure")
 {
     *this = rhs;
 }

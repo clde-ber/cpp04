@@ -18,14 +18,14 @@ class ICharacter
 class Character : public ICharacter
 {
     private:
-        std::string _name;
+        std::string const _name;
         AMateria *_Mat[4];
     public:
         Character( void );
-        Character(std::string const & type );
+        Character(std::string const & name );
         Character(Character const & rhs);
         Character& operator=(Character const & rhs);
-        ~Character();
+        virtual ~Character();
         std::string const &getName() const;
         void equip(AMateria* m);
         void unequip(int idx);

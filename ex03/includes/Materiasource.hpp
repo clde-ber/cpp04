@@ -17,14 +17,13 @@ class IMateriaSource
 class MateriaSource : public IMateriaSource
 {
     private:
-        std::string _type;
         AMateria* _Mat[4];
         void printMat() const;
     public:
         MateriaSource( void );
         MateriaSource(MateriaSource const & rhs);
         MateriaSource& operator=(MateriaSource const & rhs);
-        ~MateriaSource();
+        virtual ~MateriaSource();
         void learnMateria(AMateria* rhs);
         AMateria* createMateria(std::string const & type);
 };

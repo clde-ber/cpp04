@@ -20,7 +20,7 @@ Brain::Brain( Brain const & rhs)
     *this = rhs;
 }
 
-const Brain & Brain::operator=( Brain const &rhs)
+Brain & Brain::operator=( Brain const &rhs)
 {
     std::cout << "assignation operator called - Brain" << std::endl;
     std::string str;

@@ -11,6 +11,7 @@ Cat::Cat( void )
 Cat::Cat( std::string type )
 {
     std::cout << "Cat constructor called" << std::endl;
+    type = "Cat";
     _type = type;
     _brain = new Brain(type);
 }
@@ -21,7 +22,7 @@ Cat::Cat( Cat const & rhs)
     *this = rhs;
 }
 
-const Cat & Cat::operator=( Cat const &rhs)
+Cat & Cat::operator=( Cat const &rhs)
 {
     std::cout << "assignation operator called - Cat" << std::endl;
     _type = rhs._type;

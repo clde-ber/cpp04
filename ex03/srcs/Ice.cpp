@@ -4,17 +4,17 @@
 
 Ice& Ice::operator=(Ice const & rhs)
 {
-    _type = rhs._type;
+    (void)rhs;
     return *this;
 }
 
-Ice::Ice( void ) : AMateria("Ice")
+Ice::Ice( void ) : AMateria("ice")
 {
-    _type = "Ice";
+
 }
 
 
-Ice::Ice(Ice const & rhs) : AMateria("Ice")
+Ice::Ice(Ice const & rhs) : AMateria("ice")
 {
     *this = rhs;
 }

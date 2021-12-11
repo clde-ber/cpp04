@@ -11,6 +11,7 @@ Dog::Dog( void )
 Dog::Dog( std::string type )
 {
     std::cout << "Dog constructor called" << std::endl;
+    type = "Dog";
     _type = type;
     _brain = new Brain(type);
 }
@@ -21,7 +22,7 @@ Dog::Dog( Dog const & rhs)
     *this = rhs;
 }
 
-const Dog & Dog::operator=( Dog const &rhs)
+Dog & Dog::operator=( Dog const &rhs)
 {
     std::cout << "assignation operator called - Dog" << std::endl;
     _type = rhs._type;

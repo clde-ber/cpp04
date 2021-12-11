@@ -16,7 +16,7 @@ Animal::Animal( Animal const & rhs)
     *this = rhs;
 }
 
-const Animal & Animal::operator=( Animal const &rhs)
+Animal & Animal::operator=( Animal const &rhs)
 {
     std::cout << "assignation operator called - Animal" << std::endl;
     _type = rhs._type;
@@ -35,5 +35,5 @@ std::string const & Animal::getType( void ) const
 
 void Animal::makeSound( void ) const
 {
-    std::cout << "Whatever Animal sound!" << std::endl;
+    std::cout << "Random Animal sound!" << std::endl;
 }

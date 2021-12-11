@@ -9,20 +9,21 @@ Dog::Dog( void ) : Animal()
 
 Dog::Dog( std::string type ) : Animal(type)
 {
+    type = "Dog";
     _type = type;
     std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog( Dog const & rhs) : Animal(rhs)
 {
-    _type = rhs._type;
     std::cout << "Dog copy constructor called" << std::endl;
+    *this = rhs;
 }
 
-const Dog & Dog::operator=( Dog const &rhs)
+Dog & Dog::operator=( Dog const &rhs)
 {
     std::cout << "assignation operator called - Dog" << std::endl;
-    new (this) Dog(rhs);
+    _type = rhs._type;
     return *this;
 }
 

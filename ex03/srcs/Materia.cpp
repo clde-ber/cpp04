@@ -2,17 +2,11 @@
 #include "Character.hpp"
 
 
-AMateria::AMateria( void ) {}
+AMateria::AMateria( void ) : _type("random type") {}
 
-AMateria::AMateria( std::string const & type )
-{
-    (void)type;
-}
+AMateria::AMateria( std::string const & type ) : _type(type) {}
 
-AMateria::AMateria( AMateria const & rhs )
-{
-    *this = rhs;
-}
+AMateria::AMateria( AMateria const & rhs ) : _type(rhs._type) {}
 
 AMateria & AMateria::operator=(AMateria const & rhs)
 {
